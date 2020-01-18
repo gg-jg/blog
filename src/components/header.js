@@ -1,21 +1,30 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+import logo from '../images/logo.svg';
+
+const HeaderWrapper = styled.div`
+  background: #f5f5f5;
+  border-bottom-color: rgb(38, 38, 38);
+  border-bottom: solid;
+  border-bottom-width: 0px;
+  margin-bottom: 1.45rem;
+  img {
+    margin-bottom: 0;
+    width: 150px;
+  }
+`;
+
+const HeaderContainer = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem;
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <HeaderWrapper>
+    <HeaderContainer>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -24,19 +33,11 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <img src={logo} alt="JustGiving Logo" />
         </Link>
       </h1>
-    </div>
-  </header>
-)
+    </HeaderContainer>
+  </HeaderWrapper>
+);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

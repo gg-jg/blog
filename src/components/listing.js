@@ -27,16 +27,18 @@ const Listing = () => {
 
   return (
     <div>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <article key={node.frontmatter.slug}>
-          <Link to={`/posts${node.frontmatter.slug}`}>
-            <h2>{node.frontmatter.title}</h2>
-          </Link>
-          <p>{node.frontmatter.date}</p>
-          <p>{node.excerpt}</p>
-          <Link to={`/posts${node.frontmatter.slug}`}>Read More</Link>
-        </article>
-      ))}
+      {data.allMarkdownRemark.edges.map(
+        ({ node: { frontmatter, excerpt } }) => (
+          <article key={frontmatter.slug}>
+            <Link to={`/posts${frontmatter.slug}`}>
+              <h2>{frontmatter.title}</h2>
+            </Link>
+            <p>{frontmatter.date}</p>
+            <p>{excerpt}</p>
+            <Link to={`/posts${frontmatter.slug}`}>Read More</Link>
+          </article>
+        )
+      )}
     </div>
   )
 }
