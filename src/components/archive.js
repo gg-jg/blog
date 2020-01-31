@@ -35,6 +35,9 @@ const Archive = () => {
       text-decoration: underline;
       color: #524763;
     }
+    a:visiting {
+      color: #524763;
+    }
   `;
 
   const postData = data.allMarkdownRemark;

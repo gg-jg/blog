@@ -9,7 +9,7 @@ const HeaderWrapper = styled.div`
   border-bottom-color: rgb(38, 38, 38);
   border-bottom: solid;
   border-bottom-width: 0px;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   width: 100%;
   img {
     margin-bottom: 0;
