@@ -10,6 +10,7 @@ const HeaderWrapper = styled.div`
   border-bottom: solid;
   border-bottom-width: 0px;
   margin-bottom: 1.45rem;
+  width: 100%;
   img {
     margin-bottom: 0;
     width: 150px;
@@ -18,7 +19,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  width: 90%;
   padding: 1rem;
 `;
 
