@@ -39,5 +39,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-netlify`,
   ],
-}
+};
