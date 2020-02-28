@@ -1,7 +1,8 @@
 ---
-slug: "/jg-silicon-milkroundabout"
-date: "2020-01-15"
-title: "JustGiving at Silicon Milkroundabout"
+slug: '/jg-silicon-milkroundabout'
+date: '2020-01-15'
+title: 'JustGiving at Silicon Milkroundabout'
+tags: ['tech', 'conference']
 ---
 
 # Silicon Milkroundabout
@@ -40,5 +41,3 @@ Practice what you want to say to the companies to increase your sale-ability, re
 Swag, swag, swag; endless supply of free coffee; great food stalls; arcade games; live music; chill out zones, “influential leaders” talks (James Mitchell for our Platform Engineering Team represented) and lets not forget the amazing companies and talent you will be interacting with potentially losing your voice later that day (after all that sweet talking).
 
 Follow the link to our [JustGiving](https://www.justgiving.com/jobs) careers page to find out more about the roles we’re hiring for!
-
-#blog #work
