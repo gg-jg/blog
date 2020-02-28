@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32afdbcd94402d46568e4785f86150909b53291c5377161854f7968d3fb88583
-size 318
+import React from 'react';
+
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
+const NotFoundPage = () => (
+  <Layout>
+    <SEO title="404: Not found" />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  </Layout>
+);
+
+export default NotFoundPage;

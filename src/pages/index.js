@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b3fd330f5f865a9129090f74ce73612056139ddbf7f1145fc97fd2c727a0c72
-size 306
+import React from 'react';
+
+import Layout from '../components/layout';
+import Listing from '../components/listing';
+import SEO from '../components/seo';
+
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
+    <SEO title="Home" />
+    <Listing />
+  </Layout>
+);
+
+export default IndexPage;
