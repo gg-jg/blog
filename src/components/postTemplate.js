@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import Layout from './layout';
 
 export default function Template({
@@ -15,6 +14,12 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
+          {frontmatter.featureImage && (
+            <img
+              src={frontmatter.featureImage.publicURL}
+              alt={frontmatter.featureImage.name}
+            />
+          )}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -33,6 +38,10 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         slug
         title
+        featureImage {
+          name
+          publicURL
+        }
       }
     }
   }
