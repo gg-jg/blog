@@ -3,6 +3,7 @@ slug: '/jg-silicon-milkroundabout'
 date: '2020-01-15'
 title: 'JustGiving at Silicon Milkroundabout'
 tags: ['tech', 'conference']
+featureImage: ./silicon-milkroundabout-image-london-2019.jpg
 ---
 
 # Silicon Milkroundabout
@@ -10,8 +11,6 @@ tags: ['tech', 'conference']
 A couple weeks ago now the JustGiving Tech team attended Silicon Milkroundabout, to establish our presence in the London tech scene and to capture some of the excitement of the day.
 
 In this post I’ll briefly describe what the day is all about and why you would want to attend this awesome event. Hopefully it gives confidence to any devs/companies who are wanting to attend SMR in 2020.
-
-![](SMR-Blogpost/silicon-milkroundabout-image-london-2019.jpg)
 
 ### What is it?
 
