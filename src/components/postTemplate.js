@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import Layout from './layout';
 
 export default function Template({
@@ -16,7 +15,10 @@ export default function Template({
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
           {frontmatter.featureImage && (
-            <Img fluid={frontmatter.featureImage.childImageSharp.fluid} />
+            <img
+              src={frontmatter.featureImage.publicURL}
+              alt={frontmatter.featureImage.name}
+            />
           )}
           <div
             className="blog-post-content"
@@ -38,11 +40,7 @@ export const pageQuery = graphql`
         title
         featureImage {
           name
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          publicURL
         }
       }
     }
