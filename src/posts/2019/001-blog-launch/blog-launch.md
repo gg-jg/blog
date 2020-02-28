@@ -4,7 +4,7 @@ date: '2018-01-10'
 title: 'JustGiving Tech Blog Launch'
 ---
 
-# The New JG Tech Blog
+# The New JG Tech Blog - test
 
 this is our new blog platform to showcase all that we offer in the tech world.
 
