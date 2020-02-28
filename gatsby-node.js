@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(`
     {
       allMarkdownRemark {
@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
@@ -23,6 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: node.frontmatter.slug,
       },
-    })
-  })
-}
+    });
+  });
+};
