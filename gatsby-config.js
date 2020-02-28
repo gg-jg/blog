@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `JG Tech BLog`,
+    description: `This is going to be your tech blog description`,
+    author: `@justgivingtech`,
+    siteUrl: `https://clever-boyd-c7c3b1.netlify.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
