@@ -2,6 +2,7 @@
 slug: '/jg-tech-blog-launch'
 date: '2018-01-10'
 title: 'JustGiving Tech Blog Launch'
+featureImage: './dixie.jpg'
 ---
 
 # The New JG Tech Blog - test
