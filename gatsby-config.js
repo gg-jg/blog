@@ -39,6 +39,13 @@ module.exports = {
         name: 'posts',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/team`,
+        name: 'teams',
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify-cms`,
