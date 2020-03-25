@@ -45,7 +45,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <SEO />
+      <SEO title="JG Tech Blog" />
       <Header siteTitle={data.site.siteMetadata.title} />
       {location && location.pathname === '/' && (
         <HeroImageWrapper>
