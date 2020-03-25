@@ -10,11 +10,22 @@ import Img from 'gatsby-image';
 import './layout.css';
 
 const MainLayout = styled.main`
-  max-width: 90%;
+  max-width: 1200px;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 40px;
+`;
+
+const HeroImageWrapper = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+    width
+    
+  }
 `;
 
 const Layout = ({ children, location }) => {
@@ -25,13 +36,9 @@ const Layout = ({ children, location }) => {
           title
         }
       }
-      file(relativePath: { regex: "/jg-blog-banner/" }) {
-        size
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
+      file(relativePath: { regex: "/tech-for-good-banner/" }) {
+        publicURL
+        name
       }
     }
   `);
@@ -40,15 +47,9 @@ const Layout = ({ children, location }) => {
     <>
       <SEO />
       <Header siteTitle={data.site.siteMetadata.title} />
-      {location && location.pathname === '/' && (
-        <Spring from={{ height: 100 }} to={{ height: 400 }}>
-          {styles => (
-            <div style={{ overflow: 'hidden', ...styles }}>
-              <Img fluid={data.file.childImageSharp.fluid} />
-            </div>
-          )}
-        </Spring>
-      )}
+      <HeroImageWrapper>
+        <img src={data.file.publicURL} alt={data.file.name} />
+      </HeroImageWrapper>
       <MainLayout>
         <div>{children}</div>
         <Archive />
