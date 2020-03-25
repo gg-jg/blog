@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Spring } from 'react-spring/renderprops';
 
 import SEO from './seo';
 import Header from './header';
 import Archive from './archive';
-import Img from 'gatsby-image';
 import './layout.css';
 
 const MainLayout = styled.main`
