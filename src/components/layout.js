@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Spring } from 'react-spring/renderprops';
 
+import SEO from './seo';
 import Header from './header';
 import Archive from './archive';
 import Img from 'gatsby-image';
@@ -24,7 +25,7 @@ const Layout = ({ children, location }) => {
           title
         }
       }
-      file(relativePath: { regex: "/bg/" }) {
+      file(relativePath: { regex: "/jg-blog-banner/" }) {
         size
         childImageSharp {
           fluid(maxWidth: 1000) {
@@ -37,9 +38,10 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
+      <SEO />
       <Header siteTitle={data.site.siteMetadata.title} />
       {location && location.pathname === '/' && (
-        <Spring from={{ height: 100 }} to={{ height: 200 }}>
+        <Spring from={{ height: 100 }} to={{ height: 400 }}>
           {styles => (
             <div style={{ overflow: 'hidden', ...styles }}>
               <Img fluid={data.file.childImageSharp.fluid} />
