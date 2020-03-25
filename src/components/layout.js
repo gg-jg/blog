@@ -47,9 +47,11 @@ const Layout = ({ children, location }) => {
     <>
       <SEO />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <HeroImageWrapper>
-        <img src={data.file.publicURL} alt={data.file.name} />
-      </HeroImageWrapper>
+      {location && location.pathname === '/' && (
+        <HeroImageWrapper>
+          <img src={data.file.publicURL} alt={data.file.name} />
+        </HeroImageWrapper>
+      )}
       <MainLayout>
         <div>{children}</div>
         <Archive />
