@@ -1,12 +1,12 @@
 ---
 slug: '/my-blog-demo'
 date: '2020-03-26'
-title: 'Gareth's Blog Demo'
+title: 'Gareths Blog Demo'
 featureImage: ./tech-for-good.png
 ---
 
-# The New JG Tech Blog - test
+# Gareth doing a demo
 
-this is our new blog platform to showcase all that we offer in the tech world.
+Basic demo for the team, showcasing how easy it is to create an article and host it
 
 Come and join us for this amazing journey into the ins and outs of the greatest Social Good platform.
