@@ -2,7 +2,7 @@
 slug: '/my-blog-demo'
 date: '2020-03-26'
 title: 'Gareth's Blog Demo'
-featureImage: './tech-for-good.png'
+featureImage: 'tech-for-good.png'
 ---
 
 # The New JG Tech Blog - test
