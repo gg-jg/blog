@@ -39,6 +39,7 @@ const Listing = () => {
       color: white;
       display: inline-block;
       font-weight: 500;
+      font-size: 13px;
     }
   `;
 
@@ -87,7 +88,7 @@ const Listing = () => {
             {frontmatter.tags && (
               <div className="tag-wrapper">
                 {frontmatter.tags.map(tag => {
-                  return <span>{tag}</span>;
+                  return <span key={tag}>{tag}</span>;
                 })}
               </div>
             )}
