@@ -19,6 +19,11 @@ const Listing = () => {
     h2 {
       margin-bottom: 1rem;
     }
+    .subtitle-wrapper {
+      display: flex;
+      font-weight: 500;
+      color: #ab29b5;
+    }
     .read-more {
       font-family: helvetica;
       font-size: 0.8rem;
@@ -70,7 +75,7 @@ const Listing = () => {
             <Link to={`/posts${frontmatter.slug}`}>
               <h2>{frontmatter.title}</h2>
             </Link>
-            <div style={{ display: 'flex', fontWeight: 500 }}>
+            <div className="subtitle-wrapper">
               <p>{frontmatter.date}</p>
               <p style={{ margin: '0 10px' }}> - </p>
               <p>{timeToRead} min read</p>
