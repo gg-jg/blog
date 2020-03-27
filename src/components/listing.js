@@ -12,10 +12,6 @@ const Listing = () => {
       color: black;
       text-decoration: none;
     }
-    p {
-      font-size: 0.8rem;
-      margin-bottom: 1.5rem;
-    }
     h2 {
       margin-bottom: 1rem;
     }
@@ -81,7 +77,7 @@ const Listing = () => {
               <p style={{ margin: '0 10px' }}> - </p>
               <p>{timeToRead} min read</p>
             </div>
-            <p>{excerpt}</p>
+            <p className="excerpt">{excerpt}</p>
             <Link to={`/posts${frontmatter.slug}`} className="read-more">
               Read More
             </Link>
