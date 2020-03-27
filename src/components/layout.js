@@ -10,8 +10,12 @@ import './layout.css';
 const MainLayout = styled.main`
   max-width: 1200px;
   margin: 1rem auto;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
   grid-gap: 40px;
 `;
 
@@ -22,7 +26,6 @@ const HeroImageWrapper = styled.div`
     display: block;
     margin: 0 auto;
     width
-    
   }
 `;
 
@@ -41,15 +44,23 @@ const Layout = ({ children, location }) => {
     }
   `);
 
+  const locationHasBlog = () => {
+    if (location.pathname.includes('/blog')) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <>
       <SEO title="JG Tech Blog" />
       <Header siteTitle={data.site.siteMetadata.title} />
-      {location && location.pathname === '/' && (
-        <HeroImageWrapper>
-          <img src={data.file.publicURL} alt={data.file.name} />
-        </HeroImageWrapper>
-      )}
+      {(location && location.pathname === '/') ||
+        (locationHasBlog() && (
+          <HeroImageWrapper>
+            <img src={data.file.publicURL} alt={data.file.name} />
+          </HeroImageWrapper>
+        ))}
       <MainLayout>
         <div>{children}</div>
         <Archive />

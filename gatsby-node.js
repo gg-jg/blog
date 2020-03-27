@@ -1,4 +1,5 @@
 const path = require('path');
+const { paginate } = require('gatsby-awesome-pagination');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -15,6 +16,14 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+
+  paginate({
+    createPage,
+    items: result.data.allMarkdownRemark.edges,
+    itemsPerPage: 2,
+    pathPrefix: '/blog',
+    component: path.resolve('./src/components/blog.js'),
+  });
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({

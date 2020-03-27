@@ -2,7 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-const Listing = () => {
+const POST_QUERY = graphql`
+  query BlogPostListing {
+    allMarkdownRemark(
+      limit: 5
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            slug
+            date(formatString: "DD MMMM, YYYY")
+            tags
+          }
+          timeToRead
+        }
+      }
+    }
+  }
+`;
+
+const Listing = ({ pageContext }) => {
   const Post = styled.article`
     box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
     padding: 1rem;
@@ -36,61 +61,44 @@ const Listing = () => {
       display: inline-block;
       font-weight: 500;
       font-size: 13px;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
   `;
 
-  const data = useStaticQuery(graphql`
-    query BlogPostListing {
-      allMarkdownRemark(
-        limit: 5
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
-        totalCount
-        edges {
-          node {
-            id
-            excerpt
-            timeToRead
-            frontmatter {
-              title
-              slug
-              date(formatString: "DD MMMM, YYYY")
-              tags
-            }
-            timeToRead
-          }
-        }
-      }
-    }
-  `);
+  const { allMarkdownRemark } = useStaticQuery(POST_QUERY);
 
   return (
     <div>
-      {data.allMarkdownRemark.edges.map(
-        ({ node: { frontmatter, excerpt, timeToRead } }) => (
-          <Post key={frontmatter.slug}>
-            <Link to={`/posts${frontmatter.slug}`}>
-              <h2>{frontmatter.title}</h2>
-            </Link>
-            <div className="subtitle-wrapper">
-              <p>{frontmatter.date}</p>
-              <p style={{ margin: '0 10px' }}> - </p>
-              <p>{timeToRead} min read</p>
-            </div>
-            <p className="excerpt">{excerpt}</p>
-            <Link to={`/posts${frontmatter.slug}`} className="read-more">
-              Read More
-            </Link>
-            {frontmatter.tags && (
-              <div className="tag-wrapper">
-                {frontmatter.tags.map(tag => {
-                  return <span key={tag}>{tag}</span>;
-                })}
+      {allMarkdownRemark &&
+        allMarkdownRemark.edges.map(
+          ({ node: { frontmatter, excerpt, timeToRead } }) => (
+            <Post key={frontmatter.slug}>
+              <Link to={`/posts${frontmatter.slug}`}>
+                <h2>{frontmatter.title}</h2>
+              </Link>
+              <div className="subtitle-wrapper">
+                <p>{frontmatter.date}</p>
+                <p style={{ margin: '0 10px' }}> - </p>
+                <p>{timeToRead} min read</p>
               </div>
-            )}
-          </Post>
-        )
-      )}
+              <p className="excerpt">{excerpt}</p>
+              <Link to={`/posts${frontmatter.slug}`} className="read-more">
+                Read More
+              </Link>
+              {frontmatter.tags && (
+                <div className="tag-wrapper">
+                  {frontmatter.tags.map(tag => {
+                    return <span key={tag}>{tag}</span>;
+                  })}
+                </div>
+              )}
+            </Post>
+          )
+        )}
     </div>
   );
 };

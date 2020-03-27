@@ -40,10 +40,17 @@ const Archive = () => {
     }
   `;
 
+  const Aside = styled.aside`
+    @media (max-width: 767px) {
+      padding: 5px;
+      margin: 5px;
+    }
+  `;
+
   const postData = data.allMarkdownRemark;
   return (
     <>
-      <aside>
+      <Aside>
         <h3>Archive</h3>
         <ArchiveList>
           {postData.edges.map(edge => (
@@ -54,7 +61,7 @@ const Archive = () => {
             </li>
           ))}
         </ArchiveList>
-      </aside>
+      </Aside>
     </>
   );
 };
