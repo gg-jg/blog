@@ -23,10 +23,10 @@ const Listing = () => {
       font-family: helvetica;
       font-size: 0.8rem;
       text-decoration: underline;
-      color: #524763;
+      color: #ab29b5;
     }
     .tag-wrapper span {
-      background-color: purple;
+      background-color: #ab29b5;
       margin-right: 10px;
       margin-top: 10px;
       padding: 5px 15px;

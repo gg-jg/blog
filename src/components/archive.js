@@ -33,10 +33,10 @@ const Archive = () => {
       font-family: helvetica;
       font-size: 0.8rem;
       text-decoration: underline;
-      color: #524763;
+      color: #ab29b5;
     }
     a:visiting {
-      color: #524763;
+      color: #ab29b5;
     }
   `;
 
