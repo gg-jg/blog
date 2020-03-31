@@ -50,7 +50,8 @@ const Layout = ({ children, location }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       {location &&
         (location.pathname === '/' ||
-          (location && location.pathname.indexOf('blog') > -1)) && (
+          location.pathname === '/blog' ||
+          location.pathname === '/blog/') && (
           <HeroImageWrapper>
             <img src={data.file.publicURL} alt={data.file.name} />
           </HeroImageWrapper>
