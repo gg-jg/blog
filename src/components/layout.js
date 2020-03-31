@@ -49,7 +49,8 @@ const Layout = ({ children, location }) => {
       <SEO title="JG Tech Blog" />
       <Header siteTitle={data.site.siteMetadata.title} />
       {location &&
-        (location.pathname === '/' || location.pathname.includes('/blog')) && (
+        (location.pathname === '/' ||
+          (location && location.pathname.includes('blog'))) && (
           <HeroImageWrapper>
             <img src={data.file.publicURL} alt={data.file.name} />
           </HeroImageWrapper>
