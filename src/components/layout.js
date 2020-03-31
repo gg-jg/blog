@@ -46,8 +46,8 @@ const Layout = ({ children, location }) => {
 
   const showHeroBanner = () => {
     if (
-      location.pathname.includes('/blog') ||
-      location.pathname.includes('/')
+      location.pathname.includes('/') ||
+      location.pathname.includes('/blog/')
     ) {
       return true;
     }
