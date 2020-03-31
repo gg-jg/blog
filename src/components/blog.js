@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 
 import Layout from './layout';
-import SEO from './SEO';
+import SEO from './seo';
 import Pager from './pager';
 
 const Blog = ({ location, data, pageContext }) => {
