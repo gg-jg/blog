@@ -15,13 +15,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `JustGiving Tech Blog`,
+        short_name: `JG Tech Blog`,
         start_url: `/`,
         background_color: `#ab29b5`,
         theme_color: `#ab29b5`,
@@ -49,10 +47,14 @@ module.exports = {
             // the content container as this plugin uses this as the
             // base for generating different widths of each image.
             maxWidth: 590,
+            loading: 'lazy',
+            disableBgImage: false,
           },
         ],
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify`,
   ],
