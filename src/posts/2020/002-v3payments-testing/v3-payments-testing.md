@@ -11,7 +11,7 @@ The main project that we are currently working on in Fintech is the update of ou
 
 For the uninitiated AWS Step Functions are essentially a way of defining a state machine that runs in the cloud, where you supply a JSON input and the execution flows through from step to step before ultimately producing an output. The definition of the step function is provided in either a JSON or YML file which covers what each step should do (e.g. run a specific Lambda function, publish an SNS event etc.) and which order steps should be run in.
 
-![step-function](./stepfunctions_graph.png)
+![step-function](./stepfunctions-graph.png)
 
 We decided to have the core logic around the payment flow in one code repository and to have individual lambdas for each PSP (Payment Service Provider) in their own repository. This allows us to keep the common functionality separated from the much more opinionated implementations that each PSP uses - for example each will have their own response codes that need to be mapped, and API request objects that have differing signatures. A common interface is agreed between the workflow and any PSP lambdas so we can change between them at runtime.
 
