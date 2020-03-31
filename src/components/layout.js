@@ -44,25 +44,16 @@ const Layout = ({ children, location }) => {
     }
   `);
 
-  const showHeroBanner = () => {
-    if (
-      location.pathname.includes('/') ||
-      location.pathname.includes('/blog/')
-    ) {
-      return true;
-    }
-    return false;
-  };
-
   return (
     <>
       <SEO title="JG Tech Blog" />
       <Header siteTitle={data.site.siteMetadata.title} />
-      {location && showHeroBanner() && (
-        <HeroImageWrapper>
-          <img src={data.file.publicURL} alt={data.file.name} />
-        </HeroImageWrapper>
-      )}
+      {location &&
+        (location.pathname === '/' || location.pathname.includes('/blog')) && (
+          <HeroImageWrapper>
+            <img src={data.file.publicURL} alt={data.file.name} />
+          </HeroImageWrapper>
+        )}
       <MainLayout>
         <div>{children}</div>
         <Archive />
