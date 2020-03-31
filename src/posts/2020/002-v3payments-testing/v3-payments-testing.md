@@ -104,7 +104,7 @@ WaitBeforeSelectPsp:
 ...
 ```
 
-![extra_steps](./v3dummywait.png)
+<!-- ![extra_steps](./v3dummywait.png) -->
 
 We weren't able to just override the wait values in the YAML file for testing because the delay until retry is decided by the PSP lambda which lives in its own repository and the retry intervals are decided at runtime. This is not the case with the retry values for Accertify, however, which follow a set schedule defined in the YAML.
 
